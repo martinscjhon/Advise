@@ -1,0 +1,42 @@
+:root {
+  --font: "Roboto";
+  --white: #fff;
+  --black-primary: #020202;
+  --black-secondary: rgba(0, 0, 0, 0.87);
+  --gray-primary: #F4F4F4;
+  --gray-secondary: #BDBDBD;
+  --gray-tertiary: #666;
+  --gray-tertiary-800: #565656;
+  --gray-opacity: #d2d2d2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+button:disabled span {
+  color: var(--gray-opacity) !important;
+}
+
+body {
+  font-family: var(--font);
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}

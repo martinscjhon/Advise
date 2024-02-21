@@ -1,0 +1,64 @@
+<main class="main">
+  <header>
+    <img src="../assets/Logo.png" alt="logo-advise">
+    <div>
+      <h3>Olá, {{user}}</h3>
+      <span class="material-symbols-outlined">arrow_drop_down</span>
+    </div>
+  </header>
+  <section>
+    <div class="box-title">
+      <h1>Fase teste prático Front_end</h1>
+      <span class="mobile">pokebusca</span>
+      <div class="search">
+        <input type="text" placeholder="Buscar" (change)="onChange($event)" [value]="valueSearch" (focus)="showAutocomplete = true"/>
+        <div class="actions">
+          <button (click)="searchPokemon()">
+            <span class="material-symbols-outlined">search</span>
+          </button>
+          <button (click)="closeSearch()">
+            <span class="material-symbols-outlined">close</span>
+          </button>
+        </div>
+        <div class="autocomplete" *ngIf="showAutocomplete">
+          <span *ngFor="let pokemon of listDefaultPokemons" (click)="selectedAutocomplete(pokemon?.name)">{{pokemon?.name}}</span>
+        </div>
+      </div>
+    </div>
+    <span>pokebusca</span>
+
+    <div class="show-quant-itens">
+      Exibindo {{rowsPerPage}} de {{totalItens}} itens
+    </div>
+
+    <ul>
+      <li *ngFor="let pokemon of listPokemon">
+        <div>
+          <img src="../assets/img-pokemon.png" alt="img-pokemon">
+          <div class="box-text">
+            <p>{{pokemon.name}} #{{pokemon.index + 1}}</p>
+            <p>Características do pokemon dolor sit amet, consectetur adipiscing elit. In ultricies nunc at odio tempor
+              tincidunt. Sed sit amet dolor velit. Donec convallis tellus ut porta molestie. Suspendisse condimentum et
+              dui in aliquam.</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <div class="pagination">
+      <span>{{currentPage}} de {{totalPages}} páginas</span>
+      <div class="actions">
+        <button (click)="paginationFirstPage()" [disabled]="initialPagination === 0"><span
+            class="material-symbols-outlined">first_page</span></button>
+        <button (click)="paginationPreviusPage()" [disabled]="initialPagination === 0"><span
+            class="material-symbols-outlined">chevron_left</span></button>
+        <button (click)="paginationNextPage()" [disabled]="finishPagination === totalItens"><span
+            class="material-symbols-outlined">chevron_right</span></button>
+        <button (click)="paginationLastPage()" [disabled]="finishPagination === totalItens"><span
+            class="material-symbols-outlined">last_page</span></button>
+      </div>
+    </div>
+  </section>
+  <footer></footer>
+</main>
+<router-outlet />
