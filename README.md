@@ -60,8 +60,8 @@ OBS: Esse projeto utiliza como padrão o **npm**.
 
 <br />
 
-Por padrão, a aplicação é startada no endereço [http://localhost:4200//](http://localhost:4200//)
+Por padrão, a aplicação é startada no endereço [http://localhost:4200/](http://localhost:4200/)
 
 ```bash
-  Abra o navegador no endereço: http://localhost:4200//
+  Abra o navegador no endereço: http://localhost:4200/
 ```
